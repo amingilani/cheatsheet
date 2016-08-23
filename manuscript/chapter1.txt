@@ -1,59 +1,89 @@
 # Rails
 
+## Rails CLI
+
+Fine the guide to the Rails command line [here](http://guides.rubyonrails.org/command_line.html)
+
+### Miscellaneous Commands
+
 ```
-Usage:
-  rails new APP_PATH [options]
+# Get a console
+rails console
+rails c
 
-Options:
-  -r, [--ruby=PATH]                                      # Path to the Ruby binary of your choice
-                                                         # Default: /usr/local/Cellar/ruby/2.3.1/bin/ruby
-  -m, [--template=TEMPLATE]                              # Path to some application template (can be a filesystem path or URL)
-  -d, [--database=DATABASE]                              # Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite3/frontbase/ibm_db/sqlserver/jdbcmysql/jdbcsqlite3/jdbcpostgresql/jdbc)
-                                                         # Default: sqlite3
-  -j, [--javascript=JAVASCRIPT]                          # Preconfigure for selected JavaScript library
-                                                         # Default: jquery
-      [--skip-gemfile], [--no-skip-gemfile]              # Don't create a Gemfile
-  -B, [--skip-bundle], [--no-skip-bundle]                # Don't run bundle install
-  -G, [--skip-git], [--no-skip-git]                      # Skip .gitignore file
-      [--skip-keeps], [--no-skip-keeps]                  # Skip source control .keep files
-  -M, [--skip-action-mailer], [--no-skip-action-mailer]  # Skip Action Mailer files
-  -O, [--skip-active-record], [--no-skip-active-record]  # Skip Active Record files
-  -P, [--skip-puma], [--no-skip-puma]                    # Skip Puma related files
-  -C, [--skip-action-cable], [--no-skip-action-cable]    # Skip Action Cable files
-  -S, [--skip-sprockets], [--no-skip-sprockets]          # Skip Sprockets files
-      [--skip-spring], [--no-skip-spring]                # Don't install Spring application preloader
-      [--skip-listen], [--no-skip-listen]                # Don't generate configuration that depends on the listen gem
-  -J, [--skip-javascript], [--no-skip-javascript]        # Skip JavaScript files
-      [--skip-turbolinks], [--no-skip-turbolinks]        # Skip turbolinks gem
-  -T, [--skip-test], [--no-skip-test]                    # Skip test files
-      [--dev], [--no-dev]                                # Setup the application with Gemfile pointing to your Rails checkout
-      [--edge], [--no-edge]                              # Setup the application with Gemfile pointing to Rails repository
-      [--rc=RC]                                          # Path to file containing extra configuration options for rails command
-      [--no-rc], [--no-no-rc]                            # Skip loading of extra configuration options from .railsrc file
-      [--api], [--no-api]                                # Preconfigure smaller stack for API only apps
+# Get a console in the test environment
+rails console -e test
+rails c -e test
 
-Runtime options:
-  -f, [--force]                    # Overwrite files that already exist
-  -p, [--pretend], [--no-pretend]  # Run but do not make any changes
-  -q, [--quiet], [--no-quiet]      # Suppress status output
-  -s, [--skip], [--no-skip]        # Skip files that already exist
 
-Rails options:
-  -h, [--help], [--no-help]        # Show this help message and quit
-  -v, [--version], [--no-version]  # Show Rails version number and quit
+# Serve the app in the test environment
+rails server -e test
+rails s -e test
 
-Description:
-    The 'rails new' command creates a new Rails application with a default
-    directory structure and configuration at the path you specify.
+# Open the database's console
+rails dbconsole
+rails db
 
-    You can specify extra command-line arguments to be used every time
-    'rails new' runs in the .railsrc configuration file in your home directory.
+# Open the database's console in the test environment
+rails dbconsole -e test
+rails db - test
 
-    Note that the arguments specified in the .railsrc file don't affect the
-    defaults values shown above in this help message.
+```
 
-Example:
-    rails new ~/Code/Ruby/weblog
+### Create a new project
 
-    This generates a skeletal Rails installation in ~/Code/Ruby/weblog.
+```
+rails new APP_PATH [options]
+
+# Create a app:
+rails new app
+
+# Create a new project wihout turbolinks:
+rails new app --skip-turbolinks
+
+# Create a new app without turbolinks and with postgres:
+rails new --skip-turbolinks --database=postgresql
+
+# Create a new api:
+rails new api --api
+
+# Create a new api with postgres:
+rails new api --api --database=postgresql
+
+```
+
+### Generate
+
+```
+# Generate something
+rails generate [type] NAME [args]
+rails g [type] NAME [args]
+```
+
+#### New controller
+
+```
+rails generate controller CONTROLLER_NAME [actions]
+
+# generate a new dashboard
+rails generate controller dashboard settings profile transactions
+```
+
+#### New resource
+
+```
+rails generate resource RESOURCE_NAME [attribute:type]
+
+# generate a new user profile
+rails generate resource profile name:string age:integer male:boolean
+
+```
+
+#### New model
+
+```
+rails generate model MODEL_NAME [attribute:type]
+
+# generate a new user profile
+rails generate resource profile name:string age:integer male:boolean
 ```
