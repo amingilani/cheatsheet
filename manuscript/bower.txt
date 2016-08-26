@@ -126,6 +126,6 @@ Specifications for your bower project. Adapted from the [specs](https://github.c
     "test",
     "tests"
   ],
-  "private": true // if true, Bower refuses to publish it, so no accidents
+  "private": true // Bower will disallow accidentally publishing to registry.
 }
 ```
