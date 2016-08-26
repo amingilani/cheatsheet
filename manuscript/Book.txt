@@ -1,2 +1,2 @@
-chapter1.txt
-chapter2.txt
+rails.txt
+bower.txt
