@@ -1,8 +1,12 @@
 # Rails
 
+Rails is a web development framework optimized for programmer happiness. Rails
+extends Ruby's English like syntax and uses conventions over explicit
+configuration,
+
 ## Rails CLI
 
-Fine the guide to the Rails command line [here](http://guides.rubyonrails.org/command_line.html)
+Find the guide to the Rails command line [here](http://guides.rubyonrails.org/command_line.html)
 
 ### Miscellaneous Commands
 
