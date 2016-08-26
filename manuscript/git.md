@@ -1,8 +1,7 @@
-# GIT
+# Git
 
 Git is the open source distributed version control system that facilitates GitHub activities on your laptop or
 desktop. This cheat sheet summarizes commonly used Git command line instructions for quick reference.
-
 
 ## Git CLI
 
@@ -101,7 +100,7 @@ Gitignore files created in subdirectories will override the gitignore in the
 project root.
 
 
-### Pattern Format
+Pattern Format:
 
 The following is sourced from [git-scm](https://git-scm.com/docs/gitignore)
 
