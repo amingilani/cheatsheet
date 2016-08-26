@@ -1,0 +1,89 @@
+# Bower
+
+Bower is the package manager for frontend components. If instead of separately
+installing bootstrap and jquery for your frontend, user bower, and updates will
+be a `bower update` away.
+
+Find more [here](https://bower.io/)
+
+## Bowerrc
+
+A configuration file for your bower -- optional
+
+```json
+{
+  "cwd": "~/.my-project",
+  "directory": "bower_components",
+  "registry": "https://bower.herokuapp.com",
+  "shorthand-resolver": "git://github.com//.git",
+  "proxy": "http://proxy.local",
+  "https-proxy": "http://proxy.local",
+  "ca": "/var/certificate.pem",
+  "color": true,
+  "timeout": 60000,
+  "save": true,
+  "save-exact": true,
+  "strict-ssl": true,
+  "storage": {
+    "packages" : "~/.bower/packages",
+    "registry" : "~/.bower/registry",
+    "links" : "~/.bower/links"
+  },
+  "interactive": true,
+  "resolvers": [
+    "mercurial-bower-resolver"
+  ],
+  "shallowCloneHosts": [
+    "myGitHost.example.com"
+  ],
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "",
+    "preuninstall": ""
+  },
+  "ignoredDependencies": [
+    "jquery"
+  ]
+}
+```
+
+## Bower Basics
+
+```bash
+# Initialize bower
+$ bower init
+
+# Install the project dependencies listed in bower.json
+$ bower install
+
+# Install the project dependencies listed in bower.json without deDependencies
+$ bower install --production
+
+# Search package in repostory
+$ bower search jquery
+
+# Install registered package
+$ bower install jquery
+
+# Install registered package and save it in bower.json dependencies
+$ bower install jquery --save
+
+# Install registered package and save it in bower.json devDependencies
+$ bower install jquery --save-dev
+
+# Other ways to install packages
+$ bower install desandro/masonry # GitHub shorthand
+$ bower install git://github.com/user/package.git # Git endpoint
+$ bower install http://example.com/script.js # URL
+```
+
+## Bower packaging
+
+```bash
+# Authenticate with Github
+$bower login
+
+# Register a package on bower
+$ bower register mypackage git://github.com/myuser/mypackage.git
+
+```
