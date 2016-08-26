@@ -1,0 +1,65 @@
+# GIT
+
+Git is the open source distributed version control system that facilitates GitHub activities on your laptop or
+desktop. This cheat sheet summarizes commonly used Git command line instructions for quick reference.
+
+
+## Git CLI
+
+```bash
+# Configuration
+$ git config --global user.name "John Smith" # use this name for commits
+$ git config --global user.email "john@example.com" # use this email for commits
+$ git config --global color.ui auto # enable colored output
+
+# Creating repositories
+$ git init . # Initialize a repository in this folder
+$ git init myproject # Create a new folder and initialize a repo
+$ git clone git@git@github.com:amingilani/cheatsheet.git # create a local clone
+
+# Making changes
+$ git status # review changes since last commit
+
+$ git add . # add all files in current directory to staging
+$ git add hello.txt # add the hello.txt file to staging
+
+$ git reset . # Unstage all files in the current directory, but preserve changes
+$ git reset hello.txt # Unstage hello.txt, but preserve changes
+
+$ git diff # show file differences that are not yet staged
+$ git diff --staged # show staged file differences
+
+$ git commit -m "Add hello.txt" # Commit the staged files with this message
+$ git commit # Commit the staged files and open the editor to input the message
+
+
+# Branches
+$ git branch # list all local branches in the current repository
+
+$ git branch feature # create a new branch called `feature`
+$ git checkout feature # switch the `feature` branch
+$ git checkout -b feature # create a new branch called feature and switch to it
+
+$ git merge feature # merge the feature branch's changes into the current branch
+$ git merge gilani/master # merge remote gilani's master branch
+$ git branch -d feature # deletes the feature branch
+
+# Working with remotes
+git remote # show all the remote repositories associated with this project
+git remote -v # show the remotes verbosely, i.e with their urls
+
+$ git remote add cheatsheet git@github.com:amingilani/cheatsheet.git # add a remote
+$ git remote rename cheatsheet upstream # rename the remote to gilani
+$ git remote rm gilani # remove the remote named gilanie
+$ git remote set-url origin git@github.com:amingilani/cheatsheet.git # change remote url
+$ git fetch gilani # download / update the history from the gilani remote
+
+$ git push origin master # push all local changes to remote repository's master
+$ git push -u origin master # push local changes to remote and set it as default
+$ git push # push local changes to default remote
+
+$ git pull origin master # pull all local changes from remote repository's master
+$ git pull -u origin master # pull local changes from remote and set it as default
+$ git pull # pull local changes from default remote
+
+```
