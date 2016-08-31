@@ -2,7 +2,9 @@
 
 Rails is a web development framework optimized for programmer happiness. Rails
 extends Ruby's English like syntax and uses conventions over explicit
-configuration,
+configuration.
+
+View a comprehensive API list at (api.rubyonrails.org)[http://api.rubyonrails.org/]
 
 ## Rails CLI
 
